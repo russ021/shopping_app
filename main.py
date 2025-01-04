@@ -1,0 +1,40 @@
+import time
+import random
+
+# Simulated function to get real-time prices
+def get_realtime_price(product_name):
+    """
+    Simulates fetching the real-time price of a product.
+    In a real-world scenario, replace this with an actual API call.
+    """
+    # Simulating price fluctuation
+    return round(random.uniform(10, 500), 2)
+
+def display_product_prices(products):
+    """
+    Displays real-time prices for a list of products.
+    """
+    print("\nReal-Time Product Prices")
+    print("=" * 30)
+    for product in products:
+        price = get_realtime_price(product)
+        print(f"{product:<20}: ${price:>7.2f}")
+    print("=" * 30)
+
+def main():
+    # List of products
+    products = ["Laptop", "Smartphone", "Headphones", "Smartwatch", "Tablet", "Camera"]
+
+    print("Welcome to the Real-Time Product Price Viewer!")
+    while True:
+        display_product_prices(products)
+        print("\nPrices refresh every 10 seconds. Press Ctrl+C to exit.")
+        try:
+            time.sleep(10)  # Refresh every 10 seconds
+        except KeyboardInterrupt:
+            print("\nExiting the program. Goodbye!")
+            break
+
+if __name__ == "__main__":
+    main()
+
