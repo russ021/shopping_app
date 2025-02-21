@@ -2,7 +2,7 @@ import time
 import random
 
 # Function to get real-time prices
-def get_realtime_price(product_name):
+def get_realtime_price():
     """
     Simulates fetching the real-time price of a product.
     In a real-world scenario, replace this with an actual API call.
@@ -17,7 +17,7 @@ def display_product_prices(products):
     print("\nReal-Time Product Prices")
     print("=" * 30)
     for product in products:
-        price = get_realtime_price(product)
+        price = get_realtime_price()
         print(f"{product:<20}: ${price:>7.2f}")
     print("=" * 30)
 
